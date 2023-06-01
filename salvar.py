@@ -1,6 +1,6 @@
 import mysql.connector
 
-#Aqui estou ligando a conexão com o banco de dados
+#vou conectar ao banco de dados
 conexao = mysql.connector.connect(
     host="edvaldo.tec.br",
     user="edvaldotec_aula",
@@ -8,17 +8,17 @@ conexao = mysql.connector.connect(
     database="edvaldotec_produ"
 )
 
-#função para inserir um novo produto no banco de dados
+#função para salvar no banco de dados
 def inserir_produto():
-  nome=input("Digite o nome do produto:")
-  descricao=input("Digite a descricao:")
-  valor=float(input("Digite o valor do produto"))
-  
-  cursor=conexao.cursor()
-  sql="INSERT INTO produtos (nome_produto, descricao, valor) VALUES (%s, %s, %s)"
-  valores=(nome,descricao,valor)
+  nome = input("Digite o nome do produto:")
+  descricao = input("Descricao do produto:")
+  valor = float(input("Digite o valor do produto:"))
+
+  cursor = conexao.cursor()
+  sql = "INSERT INTO produtos (nome_produto, descricao, valor) VALUES (%s, %s, %s)"
+  valores = (nome, descricao, valor)
   cursor.execute(sql, valores)
   conexao.commit()
-  print("Produto Inserido com Sucesso - Miguelito System")
+  print("SYS CerySoler - Salvo com sucesso!")
 
 inserir_produto()
