@@ -2,7 +2,7 @@ import mysql.connector
 
 #vou conectar ao banco de dados
 conexao = mysql.connector.connect(
-    host="edvaldo.tec.br",
+    host="127.0.0.1",
     user="edvaldotec_aula",
     password="!P^CH#8CnDYL",
     database="edvaldotec_produ"
